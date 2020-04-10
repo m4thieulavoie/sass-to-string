@@ -107,3 +107,15 @@ import styles from "./tractor.styles.scss";
 // Outputs : section p{font-family:"Comic Sans MS"}
 console.log(styles);
 ```
+
+## Typescript typings
+
+If you face typings errors in your IDE, add this line to your local typings file
+
+```ts
+import "sass-to-string/index";
+
+// Any other type declarations you might have
+```
+
+It should solve the IDE error
