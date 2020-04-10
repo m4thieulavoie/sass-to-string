@@ -1,6 +1,6 @@
 # sass-to-string
 
-`sass-to-string` is a Webpack plugin that takes a SCSS file with the `.styles.scss` extensions and make it available inside your Javascript module.
+`sass-to-string` is a Webpack loader that takes a SCSS file with the `.styles.scss` extensions and make it available inside your Javascript module.
 
 ## Installation
 
