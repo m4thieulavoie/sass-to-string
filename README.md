@@ -108,6 +108,27 @@ import styles from "./tractor.styles.scss";
 console.log(styles);
 ```
 
+## Use it with your web components!
+
+The motivation behind this package was to be able to use SASS inside Web Components. Here's an example of doing such
+
+```ts
+import styles from "./tractor.styles.scss";
+
+class TractorViewer extends HTMLElement {
+  constructor() {
+    super();
+
+    const style = document.createElement('style');
+    // styles equals "section p{font-family:"Comic Sans MS"}"
+    style.textContent = styles;
+
+    const shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.appendChild(style);
+  }
+}
+```
+
 ## Typescript typings
 
 If you face typings errors in your IDE, add this line to your local typings file
@@ -119,3 +140,7 @@ import "sass-to-string/index";
 ```
 
 It should solve the IDE error
+
+# Like this package?
+
+Of course you do! Thinking and coding this package implied quite a lot of coffee. If you want, you can [buy me one](https://buymeacoff.ee/mathieulavoie)! ☕️
