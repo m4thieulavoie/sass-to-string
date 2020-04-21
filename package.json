@@ -5,9 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "publish:patch": "npm version patch && npm publish",
-    "publish:minor": "npm version minor && npm publish",
-    "publish:major": "npm version major && npm publish",
+    "publish:patch": "npm version patch && npm publish && git push",
+    "publish:minor": "npm version minor && npm publish && git push",
+    "publish:major": "npm version major && npm publish && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "typings": "./lib/types/index.d.ts",
