@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "lib/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "es2015",
+    "allowJs": true,
+    "declarationDir": "lib/types",
+    "declaration": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "typeRoots": ["lib/types/index.d.ts"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib"]
+}
