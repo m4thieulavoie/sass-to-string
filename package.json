@@ -21,8 +21,8 @@
   "author": "Mathieu Lavoie",
   "license": "MIT",
   "peerDependencies": {
-    "sass-loader": "^8.0.0",
-    "webpack": "^4.0.0"
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0"
   },
   "dependencies": {
     "typescript": "3.8.3"
