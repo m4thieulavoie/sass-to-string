@@ -25,6 +25,6 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   }
 }
