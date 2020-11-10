@@ -21,10 +21,10 @@
   "author": "Mathieu Lavoie",
   "license": "MIT",
   "peerDependencies": {
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^8.0.2 || ^10.0.0",
     "webpack": "^4.43.0 || ^5.0.0"
   },
   "dependencies": {
-    "typescript": "3.9.3"
+    "typescript": "3.9.7"
   }
 }
