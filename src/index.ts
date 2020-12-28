@@ -1,2 +1,11 @@
-export * from "./loader";
-export * from "./utils";
+export default function (source: string, map: any) {
+    this.callback(
+      null,
+      `
+          const styles = \`${source}\`;
+          export default styles;
+      `,
+      map
+    );
+  }
+  

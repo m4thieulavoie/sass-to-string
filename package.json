@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack serve",
-    "build": "tsc",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf lib && rimraf dist",
     "publish:patch": "npm version patch && npm publish && git push",
     "publish:minor": "npm version minor && npm publish && git push",
     "publish:major": "npm version major && npm publish && git push",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "4.5.0",
+    "rimraf": "3.0.2",
     "sass": "1.30.0",
     "sass-loader": "10.1.0",
     "ts-loader": "8.0.12",

@@ -1,2 +1,1 @@
-export * from "./loader";
-export * from "./utils";
+export default function (source: string, map: any): void;
