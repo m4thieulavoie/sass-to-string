@@ -1,5 +1,7 @@
 # sass-to-string
 
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+
 `sass-to-string` is a Webpack loader that takes a SCSS file with the `.styles.scss` extensions and make it available inside your Javascript module.
 
 ## Installation
@@ -119,11 +121,11 @@ class TractorViewer extends HTMLElement {
   constructor() {
     super();
 
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     // styles equals "section p{font-family:"Comic Sans MS"}"
     style.textContent = styles;
 
-    const shadowRoot = this.attachShadow({mode: 'open'});
+    const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.appendChild(style);
   }
 }
