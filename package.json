@@ -10,7 +10,7 @@
     "publish:patch": "npm version patch && npm publish && git push",
     "publish:minor": "npm version minor && npm publish && git push",
     "publish:major": "npm version major && npm publish && git push",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "typings": "./lib/types/index.d.ts",
   "repository": "https://github.com/m4thieulavoie/sass-to-string",
