@@ -1,12 +1,17 @@
 # sass-to-string
 
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![npm version](https://badge.fury.io/js/sass-to-string.svg)](https://www.npmjs.com/package/sass-to-string)
+[![Downloads](https://img.shields.io/npm/dm/sass-to-string.svg)](https://www.npmjs.com/package/sass-to-string)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/m4thieulavoie/sass-to-string)
 
 `sass-to-string` is a set of helper tools that allow your Web application to leverage SASS files as JavaScript strings so you can use them the way you want afterwards. This is especially useful for Web Components that need to inject their stylesheets directly in the template.
 
 `sass-to-string` provides two different approaches
- - A Webpack loader that transforms SASS files to native JavaScript strings
- - A `sass-to-string` command that transforms your `scss` files to a native JavaScript string at build time
+
+- A Webpack loader that transforms SASS files to native JavaScript strings
+- A `sass-to-string` command that transforms your `scss` files to a native JavaScript string at build time
 
 ## Installation
 
@@ -157,7 +162,7 @@ Pretend you have this SCSS file called `demo.styles.scss`
 ```scss
 body {
   p {
-      color: red;
+    color: red;
   }
 }
 ```
@@ -165,15 +170,16 @@ body {
 And this JavaScript import statement alongside
 
 ```js
-import styles from './demo.styles.scss';
+import styles from "./demo.styles.scss";
 ```
 
-When running the command, it'll create a `demo.styles.scss.js` file in the right directory under `dist`. 
+When running the command, it'll create a `demo.styles.scss.js` file in the right directory under `dist`.
 
 ```js
 const styles = `body p {
   color: red;
-}`; export default styles;
+}`;
+export default styles;
 ```
 
 As you guessed it, you can run it alongside `tsc` a fully working app using SASS and _only_ bundled with Typescript.
