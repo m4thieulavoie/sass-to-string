@@ -27,7 +27,8 @@
   "license": "MIT",
   "peerDependencies": {
     "sass-loader": "^10.0.0",
-    "webpack": "^5.0.0"
+    "webpack": "^5.0.0",
+    "fs-extra": "^9.0.0"
   },
   "devDependencies": {
     "fs-extra": "9.0.1",

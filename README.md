@@ -189,6 +189,10 @@ Here's an example on how you could run a `build` command in your `package.json`
 }
 ```
 
+### Peer dependencies
+
+Note that this module requires a `peerDependency` on `fs-extra` in order to work properly
+
 # Like this package?
 
 Of course you do! Thinking and coding this package implied quite a lot of coffee. If you want, you can [buy me one](https://buymeacoff.ee/mathieulavoie)! ☕️
