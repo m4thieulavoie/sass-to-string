@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: ["airbnb-base", "prettier"],
+  ignorePatterns: ["lib"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -26,6 +27,7 @@ module.exports = {
     "no-use-before-define": 0,
     "class-methods-use-this": 0,
     "func-names": 0,
+    "no-console": 0,
   },
   settings: {
     react: {

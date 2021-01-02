@@ -7,11 +7,12 @@
     "start": "webpack serve",
     "build": "npm run clean && npm run lint && tsc",
     "clean": "rimraf lib && rimraf dist",
-    "lint": "eslint --ext .ts, src/ && npx stylelint \"src/**/*.scss\"",
+    "lint": "eslint --ext .js --ext .ts, ./ && npx stylelint \"src/**/*.scss\"",
     "publish:patch": "npm version patch && npm publish && git push",
     "publish:minor": "npm version minor && npm publish && git push",
     "publish:major": "npm version major && npm publish && git push",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "test:output": "tsc && sass-to-string dist=lib"
   },
   "typings": "./lib/types/index.d.ts",
   "repository": "https://github.com/m4thieulavoie/sass-to-string",
@@ -42,7 +43,6 @@
     "html-webpack-plugin": "4.5.0",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
-    "sass": "1.32.0",
     "sass-loader": "10.1.0",
     "stylelint": "13.8.0",
     "stylelint-config-prettier": "8.0.2",
@@ -53,5 +53,8 @@
     "webpack": "5.11.1",
     "webpack-cli": "4.3.1",
     "webpack-dev-server": "3.11.1"
+  },
+  "dependencies": {
+    "sass": "1.32.0"
   }
 }
