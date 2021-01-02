@@ -20,6 +20,9 @@
     "web",
     "components"
   ],
+  "bin": {
+    "sass-to-string": "./bin/sass-to-string"
+  },
   "author": "Mathieu Lavoie",
   "license": "MIT",
   "peerDependencies": {
@@ -27,6 +30,7 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
+    "fs-extra": "9.0.1",
     "html-webpack-plugin": "4.5.0",
     "rimraf": "3.0.2",
     "sass": "1.32.0",

@@ -2,25 +2,26 @@
 
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
-`sass-to-string` is a Webpack loader that takes a SCSS file with the `.styles.scss` extensions and make it available inside your Javascript module.
+`sass-to-string` is a set of helper tools that allow your Web application to leverage SASS files as JavaScript strings so you can use them the way you want afterwards. This is especially useful for Web Components that need to inject their stylesheets directly in the template.
+
+`sass-to-string` provides two different approaches
+ - A Webpack loader that transforms SASS files to native JavaScript strings
+ - A `sass-to-string` command that transforms your `scss` files to a native JavaScript string at build time
 
 ## Installation
 
 First install the module with your favorite loader
 
-```
+```bash
+# With NPM
 npm install sass-to-string --save-dev
-```
-
-```
+# With Yarn
 yarn install sass-to-string -D
 ```
 
-### Peer dependencies
+## Webpack loader
 
-Note that this module needs `webpack` and the magic from `sass-loader` in order to do its job properly
-
-## Usage in Webpack
+### Usage
 
 In your `webpack.config.js`, add the following rule.
 
@@ -48,7 +49,7 @@ module.exports = {
 };
 ```
 
-### Already have a SASS config?
+#### Already have a SASS config?
 
 Chances are you already have a SASS config in your webpack config and the above code just broke it. To fix this, add `.stories.scss` in the `exclude` of the rule.
 
@@ -56,30 +57,30 @@ See the **exclude** part in the following example
 
 ```js
 module.exports = {
-module: {
-  rules: [
+  module: {
+    rules: [
       {
           // Your new shiny sass-to-string config
       },
-    {
-      test: /\.(scss|css)$/,
-      // Excluding the `.styles.scss` extension
-      exclude: [/\.styles.scss$/, /node_modules/],
-      use: [
-        "style-loader",
-        MiniCssExtractPlugin.loader,
-        "css-loader",
-        {
-          loader: "sass-loader",
-        },
-      ],
-    },
-  ];
-}
+      {
+        test: /\.(scss|css)$/,
+        // Excluding the `.styles.scss` extension
+        exclude: [/\.styles.scss$/, /node_modules/],
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+          },
+        ],
+      },
+    ];
+  }
 }
 ```
 
-## The fun part : use it in your module!
+#### The fun part : use it in your module!
 
 Now that Webpack is configured, you can access your compiled SCSS code in a JS module.
 
@@ -110,7 +111,7 @@ import styles from "./tractor.styles.scss";
 console.log(styles);
 ```
 
-## Use it with your web components!
+#### Use it with your web components!
 
 The motivation behind this package was to be able to use SASS inside Web Components. Here's an example of doing such
 
@@ -131,7 +132,11 @@ class TractorViewer extends HTMLElement {
 }
 ```
 
-## Typescript typings
+### Peer dependencies
+
+Note that this module needs `webpack` and the magic from `sass-loader` in order to do its job properly
+
+### Typescript typings
 
 If you face typings errors in your IDE, add this line to your local typings file
 
@@ -142,6 +147,47 @@ import "sass-to-string/index";
 ```
 
 It should solve the IDE error
+
+## Build command
+
+We also expose a `sass-to-string` command that will transform your SASS files in a JavaScript string. Here's a quick example.
+
+Pretend you have this SCSS file called `demo.styles.scss`
+
+```scss
+body {
+  p {
+      color: red;
+  }
+}
+```
+
+And this JavaScript import statement alongside
+
+```js
+import styles from './demo.styles.scss';
+```
+
+When running the command, it'll create a `demo.styles.scss.js` file in the right directory under `dist`. 
+
+```js
+const styles = `body p {
+  color: red;
+}`; export default styles;
+```
+
+As you guessed it, you can run it alongside `tsc` a fully working app using SASS and _only_ bundled with Typescript.
+
+Here's an example on how you could run a `build` command in your `package.json`
+
+```json
+{
+  "scripts": {
+    ...
+    "build": "tsc && sass-to-string"
+  }
+}
+```
 
 # Like this package?
 
