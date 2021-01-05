@@ -12,7 +12,7 @@
     "publish:minor": "npm version minor && npm publish && git push",
     "publish:major": "npm version major && npm publish && git push",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "test:output": "tsc && sass-to-string dist=lib"
+    "test:output": "tsc && sass-to-string --dist=lib"
   },
   "typings": "./lib/types/index.d.ts",
   "repository": "https://github.com/m4thieulavoie/sass-to-string",

@@ -10,6 +10,17 @@ cliArgs.forEach((arg) => {
   argsMap[key] = value;
 });
 
+const srcDirectory = argsMap["--src"] || "src";
+const isVerbose = "--verbose" in argsMap;
+
+const log = (content) => {
+  if (!isVerbose) {
+    return;
+  }
+
+  console.log(`sass-to-string: ${content}`);
+};
+
 const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
   fs.readdirSync(directoryToSearch).forEach((subDirectory) => {
     const subDirectoryToSearch = path.resolve(directoryToSearch, subDirectory);
@@ -20,26 +31,32 @@ const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
     }
 
     if (stat.isFile() && subDirectoryToSearch.endsWith(pattern)) {
+      log(`Reading file ${subDirectory}`);
       const result = sass
         .renderSync({
           file: subDirectoryToSearch,
         })
         .css.toString();
 
-      const distDirectory = argsMap.dist || "dist";
+      const distDirectory = argsMap["--dist"] || "dist";
       const computedPath = path.resolve(
         __dirname,
         distDirectory,
-        `${subDirectoryToSearch.replace("/src/", `/${distDirectory}/`)}.js`
+        `${subDirectoryToSearch.replace(
+          `/${srcDirectory}/`,
+          `/${distDirectory}/`
+        )}.js`
       );
       const content = `const styles = \`${result}\`; export default styles;`;
       fs.outputFile(computedPath, content, (error) => {
         if (error) {
           console.error({ error });
+        } else {
+          log(`Successfully created ${subDirectory}.js`);
         }
       });
     }
   });
 };
 
-transformSassFilesToEsModules("./src", ".scss");
+transformSassFilesToEsModules(`./${srcDirectory}`, ".scss");

@@ -195,6 +195,27 @@ Here's an example on how you could run a `build` command in your `package.json`
 }
 ```
 
+### Options
+
+You can also provide some command options to `sass-to-string` like such
+
+```json
+{
+  "scripts": {
+    ...
+    "build": "sass-to-string --dist=lib"
+  }
+}
+```
+
+#### List of options
+
+| Option      | Default value | Description                                           |
+| ----------- | :-----------: | ----------------------------------------------------- |
+| `--dist`    |    `dist`     | Name of the directory to copy the newly created files |
+| `--src`     |     `src`     | Name of the directory to look for files               |
+| `--verbose` |   `<null>`    | If you want `sass-to-string` to be verbose            |
+
 ### Peer dependencies
 
 Note that this module requires a `peerDependency` on `fs-extra` in order to work properly
