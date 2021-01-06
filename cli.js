@@ -2,16 +2,29 @@ const fs = require("fs-extra");
 const path = require("path");
 const sass = require("sass");
 
-const cliArgs = process.argv.slice(2);
-const argsMap = {};
+let config = {};
+try {
+  // eslint-disable-next-line global-require
+  config = require("./.sass-to-string.js");
+  // eslint-disable-next-line no-empty
+} catch (e) {
+} finally {
+  config = {
+    src: "src",
+    dist: "dist",
+    prepare: (scss) => scss,
+    ...config,
+  };
+}
 
+const cliArgs = process.argv.slice(2);
 cliArgs.forEach((arg) => {
   const [key, value] = arg.split("=");
-  argsMap[key] = value;
+  config[key.replace("--", "")] = value;
 });
 
-const srcDirectory = argsMap["--src"] || "src";
-const isVerbose = "--verbose" in argsMap;
+const srcDirectory = config.src;
+const isVerbose = "verbose" in config;
 
 const log = (content) => {
   if (!isVerbose) {
@@ -32,13 +45,15 @@ const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
 
     if (stat.isFile() && subDirectoryToSearch.endsWith(pattern)) {
       log(`Reading file ${subDirectory}`);
+      const fileContent = fs.readFileSync(subDirectoryToSearch).toString();
+      const data = config.prepare(fileContent);
       const result = sass
         .renderSync({
-          file: subDirectoryToSearch,
+          data,
         })
         .css.toString();
 
-      const distDirectory = argsMap["--dist"] || "dist";
+      const distDirectory = config.dist;
       const computedPath = path.resolve(
         __dirname,
         distDirectory,

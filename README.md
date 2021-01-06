@@ -208,17 +208,29 @@ You can also provide some command options to `sass-to-string` like such
 }
 ```
 
+If you prefer, you can also create a `.sass-to-string.js` file at the root of your project
+
+```js
+module.exports = {
+  dist: "lib",
+  // Replaces bootstrap imports by resolving node_modules
+  prepare: (scss) =>
+    scss.replace(/@import "bootstrap/g, `@import "node_modules/bootstrap`),
+};
+```
+
 #### List of options
 
-| Option      | Default value | Description                                           |
-| ----------- | :-----------: | ----------------------------------------------------- |
-| `--dist`    |    `dist`     | Name of the directory to copy the newly created files |
-| `--src`     |     `src`     | Name of the directory to look for files               |
-| `--verbose` |   `<null>`    | If you want `sass-to-string` to be verbose            |
+| Option    |  Default value   | Description                                                                              |
+| --------- | :--------------: | ---------------------------------------------------------------------------------------- |
+| `dist`    |      `dist`      | Name of the directory to copy the newly created files                                    |
+| `src`     |      `src`       | Name of the directory to look for files                                                  |
+| `verbose` |     `<null>`     | If you want `sass-to-string` to be verbose                                               |
+| `prepare` | `(scss) => scss` | JavaScript function that receives the SASS content, and returns a modified version of it |
 
 ### Peer dependencies
 
-Note that this module requires a `peerDependency` on `fs-extra` in order to work properly
+Note that this module requires a `peerDependency` on `fs-extra` and `sass` in order to work properly
 
 # Like this package?
 

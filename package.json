@@ -28,6 +28,7 @@
   "author": "Mathieu Lavoie",
   "license": "MIT",
   "peerDependencies": {
+    "sass": "^1.30.0",
     "sass-loader": "^10.0.0",
     "webpack": "^5.0.0",
     "fs-extra": "^9.0.0"
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "4.12.0",
     "@typescript-eslint/parser": "4.12.0",
+    "bootstrap": "4.5.3",
     "eslint": "7.17.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "7.1.0",
@@ -43,6 +45,7 @@
     "html-webpack-plugin": "4.5.1",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
+    "sass": "1.32.0",
     "sass-loader": "10.1.0",
     "stylelint": "13.8.0",
     "stylelint-config-prettier": "8.0.2",
@@ -53,8 +56,5 @@
     "webpack": "5.11.1",
     "webpack-cli": "4.3.1",
     "webpack-dev-server": "3.11.1"
-  },
-  "dependencies": {
-    "sass": "1.32.0"
   }
 }
