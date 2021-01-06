@@ -5,7 +5,7 @@ const sass = require("sass");
 let config = {};
 try {
   // eslint-disable-next-line global-require
-  config = require("./.sass-to-string.js");
+  config = require("../../.sass-to-string.js");
   // eslint-disable-next-line no-empty
 } catch (e) {
 } finally {
