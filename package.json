@@ -1,6 +1,6 @@
 {
   "name": "sass-to-string",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Webpack loader that takes a SCSS file and converts it to a javascript string",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "components"
   ],
   "bin": {
-    "sass-to-string": "./bin/sass-to-string"
+    "sass-to-string": "bin/sass-to-string"
   },
   "author": "Mathieu Lavoie",
   "license": "MIT",
