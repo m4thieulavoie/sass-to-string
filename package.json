@@ -29,7 +29,7 @@
   "license": "MIT",
   "peerDependencies": {
     "sass": "^1.30.0",
-    "sass-loader": "^10.0.0",
+    "sass-loader": "^10.0.0 || ^11.0.0",
     "webpack": "^5.0.0",
     "fs-extra": "^9.0.0"
   },
@@ -46,7 +46,7 @@
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "sass": "1.32.6",
-    "sass-loader": "10.1.1",
+    "sass-loader": "11.0.1",
     "stylelint": "13.9.0",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-sass-guidelines": "7.1.0",
