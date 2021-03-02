@@ -4,10 +4,16 @@ const sass = require("sass");
 
 let config = {};
 try {
-  // eslint-disable-next-line global-require
-  config = require("../../.sass-to-string.js");
-  // eslint-disable-next-line no-empty
+  // Requesting the file to be at the root of the project
+  // eslint-disable-next-line
+  config = require(`${process.cwd()}/.sass-to-string.js`);
 } catch (e) {
+  console.error(
+    "sass-to-string encountered an error loading the config file. Falling back on the default config",
+    {
+      e,
+    }
+  );
 } finally {
   config = {
     src: "src",
