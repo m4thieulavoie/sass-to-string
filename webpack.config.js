@@ -1,11 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   entry: "./src/demo/index.ts",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,21 +19,21 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
-        {
-            test: /\.styles.scss$/,
-            exclude: /node_modules/,
-            use: [
-            "./lib/loader.js",
-            {
-                loader: "sass-loader",
-                options: {
-                    sassOptions: {
-                        outputStyle: "compressed",
-                    },
-                },
+      {
+        test: /\.styles.scss$/,
+        exclude: /node_modules/,
+        use: [
+          "./lib/index.js",
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                outputStyle: "compressed",
+              },
             },
-            ],
-        }
+          },
+        ],
+      },
     ],
   },
   devServer: {
