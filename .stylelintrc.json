@@ -1,11 +1,3 @@
 {
-  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
-  "plugins": ["stylelint-order"],
-  "rules": {
-    "order/order": ["custom-properties", "declarations"],
-    "order/properties-alphabetical-order": true,
-    "string-quotes": "double",
-    "max-nesting-depth": 3,
-    "selector-no-qualifying-type": null
-  }
+  "extends": ["@m4thieulavoie/linting/stylelint"]
 }
