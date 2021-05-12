@@ -34,7 +34,7 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@m4thieulavoie/linting": "0.0.9",
+    "@m4thieulavoie/linting": "0.0.10",
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "bootstrap": "5.0.0",
