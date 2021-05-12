@@ -34,13 +34,14 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@m4thieulavoie/linting": "0.0.8",
+    "@m4thieulavoie/linting": "0.0.9",
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "bootstrap": "5.0.0",
     "eslint": "7.26.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-functional": "3.2.1",
     "eslint-plugin-import": "2.22.1",
     "fs-extra": "10.0.0",
     "html-webpack-plugin": "5.3.1",
