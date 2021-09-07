@@ -1,4 +1,9 @@
-import styles from './demo.styles.scss';
+import styles from "./demo.styles.scss";
 
-const body = document.querySelector('body');
-body.innerHTML = styles;
+const style = document.createElement("style");
+style.innerHTML = styles;
+document.querySelector("head").appendChild(style);
+
+const root = document.querySelector("#root");
+console.warn({ styles });
+root.innerHTML = styles;
