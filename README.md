@@ -56,7 +56,7 @@ module.exports = {
 
 #### Already have a SASS config?
 
-Chances are you already have a SASS config in your webpack config and the above code just broke it. To fix this, add `.stories.scss` in the `exclude` of the rule.
+Chances are you already have a SASS config in your webpack config and the above code just broke it. To fix this, add `.styles.scss` in the `exclude` of the rule.
 
 See the **exclude** part in the following example
 
