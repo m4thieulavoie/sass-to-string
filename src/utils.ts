@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 /**
  * Creates a `style` DOM element and adds it to the given DOM Element's child list with the CSS style
  * received in parameter
