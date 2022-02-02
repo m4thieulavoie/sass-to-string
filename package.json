@@ -1,6 +1,6 @@
 {
   "name": "sass-to-string",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Webpack loader that takes a SCSS file and converts it to a javascript string",
   "main": "lib/index.js",
   "scripts": {
