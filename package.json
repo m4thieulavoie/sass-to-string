@@ -34,7 +34,7 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@m4thieulavoie/linting": "0.2.11",
+    "@m4thieulavoie/linting": "0.2.12",
     "bootstrap": "5.1.3",
     "eslint": "8.17.0",
     "fs-extra": "10.1.0",
