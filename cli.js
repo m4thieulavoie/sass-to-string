@@ -40,6 +40,12 @@ const log = (content) => {
   console.log(`sass-to-string: ${content}`);
 };
 
+const replaceLast = function (content, search, replacement) {
+  const parts = content.split(search);
+  const lastOccurence = parts.pop();
+  return `${parts.join(search)}${replacement}${lastOccurence}`;
+};
+
 const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
   fs.readdirSync(directoryToSearch).forEach((subDirectory) => {
     const subDirectoryToSearch = path.resolve(directoryToSearch, subDirectory);
@@ -63,7 +69,8 @@ const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
       const computedPath = path.resolve(
         __dirname,
         distDirectory,
-        `${subDirectoryToSearch.replace(
+        `${replaceLast(
+          subDirectoryToSearch,
           `/${srcDirectory}/`,
           `/${distDirectory}/`
         )}.js`
@@ -73,7 +80,7 @@ const transformSassFilesToEsModules = (directoryToSearch, pattern) => {
         if (error) {
           console.error({ error });
         } else {
-          log(`Successfully created ${subDirectory}.js`);
+          log(`Successfully created ${subDirectory}.js in ${computedPath}`);
         }
       });
     }
