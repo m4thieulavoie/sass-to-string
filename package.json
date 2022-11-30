@@ -28,7 +28,7 @@
   "author": "Mathieu Lavoie",
   "license": "MIT",
   "peerDependencies": {
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.0 || ^11.0.0",
     "sass": "^1.30.0",
     "sass-loader": "^12.0.0 || ^13.0.0",
     "webpack": "^5.0.0"
@@ -37,7 +37,7 @@
     "@m4thieulavoie/linting": "0.2.13",
     "bootstrap": "5.2.3",
     "eslint": "8.28.0",
-    "fs-extra": "10.1.0",
+    "fs-extra": "11.1.0",
     "html-webpack-plugin": "5.5.0",
     "prettier": "2.8.0",
     "rimraf": "3.0.2",
