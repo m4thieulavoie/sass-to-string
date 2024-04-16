@@ -30,7 +30,7 @@
   "peerDependencies": {
     "fs-extra": "^10.0.0 || ^11.0.0",
     "sass": "^1.30.0",
-    "sass-loader": "^12.0.0 || ^13.0.0",
+    "sass-loader": "^12.0.0 || ^13.0.0 || ^14.0.0",
     "webpack": "^5.0.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "html-webpack-plugin": "5.6.0",
     "prettier": "3.2.4",
     "rimraf": "3.0.2",
-    "sass-loader": "13.2.2",
+    "sass-loader": "14.2.1",
     "ts-loader": "9.4.2",
     "typescript": "4.9.5",
     "webpack": "5.82.1",
